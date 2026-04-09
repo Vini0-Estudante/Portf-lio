@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Portfólio</title>
+
+    <link rel="icon" type="image/png" sizes="32x32" href="/imgs/TittleIcon.png">
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body style="background-image: url(imgs/wp2.jpeg);">
+
+    <!-- PLAYER DE MÚSICA INVISÍVEL -->
+
+    <iframe id="musicFrame" src="player.html" style="position:fixed;width:1px;height:1px;border:none;" allow="autoplay">
+    </iframe>
+
+
+    <div class="window">
+
+        <header class="padding3">
+            <h1 class="titulo">Portfólio</h1>
+        </header>
+
+        <h2 class="center">Links:</h2>
+
+        <div class="align">
+
+            <div class="borderR">
+                <a href="pages/pessoal.html" target="contentFrame" class="dropbtn button-link">Pessoal</a>
+            </div>
+
+            <div class="dropdown size2">
+                <input type="checkbox" id="menu-toggle" hidden>
+                <label for="menu-toggle" class="dropbtn">Acadêmico</label>
+                <div class="dropdown-content">
+                    <a href="pages/ano1.html" target="contentFrame">1° Ano</a>
+                    <div class="borderB"></div>
+                    <a href="pages/ano2.html" target="contentFrame">2° Ano</a>
+                    <div class="borderB"></div>
+                    <a href="pages/ano3.html" target="contentFrame">3° Ano</a>
+                </div>
+            </div>
+
+            <div class="size borderL">
+                <a href="pages/projetos.html" target="contentFrame" class="dropbtn button-link">Projetos</a>
+            </div>
+        </div>
+        <!-- ÁREA ONDE AS PÁGINAS CARREGAM -->
+        <iframe name="contentFrame" src="pages/home.html" class="contentFrame">
+        </iframe>
+    </div>
+    <!-- PLAYER VISUAL -->
+
+    <div class="music-player" onclick="toggleMusic()">
+        <div id="disc" class="disc paused"></div>
+        <div id="icon" class="margin-top icon">▶</div>
+    </div>
+
+
+    <script>
+
+        let playing = false;
+
+        function toggleMusic() {
+
+            const iframe = document.getElementById("musicFrame");
+            const disc = document.getElementById("disc");
+
+            if (playing) {
+
+                iframe.contentWindow.pauseMusic();
+                disc.classList.add("paused");
+                icon.textContent = "▶";
+
+            } else {
+
+                iframe.contentWindow.playMusic();
+                iframe.contentWindow.unmute();
+                disc.classList.remove("paused");
+                icon.textContent = "⏸";
+
+            }
+
+            playing = !playing;
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>
