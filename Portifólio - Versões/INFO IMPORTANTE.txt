@@ -1,0 +1,3 @@
+As versões do portfólio devem ser baixadas e executadas na pasta dos mesmos, em caso de usar arquivos separados o código pode não funcionar de forma adequada.
+
+¯\_(ツ)_/¯
